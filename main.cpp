@@ -12,63 +12,188 @@ char s[10] = {'o', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
 
 int check()
 {
-    if(s[1] == s[2] && s[2] == s[3])
+    if (s[1] == s[2] && s[2] == s[3])
     {
         return 1;
     }
-    else if(s[4] == s[5] && s[5] == s[6])
+    else if (s[4] == s[5] && s[5] == s[6])
     {
         return 1;
     }
-    else if(s[7] == s[8] && s[8] == s[9])
+    else if (s[7] == s[8] && s[8] == s[9])
     {
         return 1;
     }
-    else if(s[1] == s[4] && s[4] == s[7])
+    else if (s[1] == s[4] && s[4] == s[7])
     {
         return 1;
     }
-    else if(s[2] == s[5] && s[5] == s[8])
+    else if (s[2] == s[5] && s[5] == s[8])
     {
         return 1;
     }
-    else if(s[3] == s[6] && s[6] == s[9])
+    else if (s[3] == s[6] && s[6] == s[9])
     {
         return 1;
     }
-    else if(s[1] == s[5] && s[5] == s[9])
+    else if (s[1] == s[5] && s[5] == s[9])
     {
         return 1;
     }
-    else if(s[3] == s[5] && s[5] == s[7])
+    else if (s[3] == s[5] && s[5] == s[7])
     {
         return 1;
     }
-    else
+    else(s[1] != '1' && s[2] != '2' && s[3] != '3' &&
+             s[4] != '4' && s[5] != '5' && s[6] != '6' &&
+             s[7] != '7' && s[8] != '8' && s[9] != '9');
     {
         return 0;
     }
-
+    
 }
+
+
 
 void board()
 {
     system("cls");
     cout << "Player 1(X)  -  Player 2(O)" << "\n\n\n";
 
-    cout << "     |     |     " << '\n';
-    cout <<"  "<< s[1] << "  |  " << s[2] << "  |  " << s[3] << '\n';
+    cout << "     |     |   " << '\n';
+    
+    if(s[1] == 'X')
+    {
+        color(1);
+    }
+      else if(s[1] == '0')
+    {
+        color(4);
+    }
+    cout <<"  " <<s[1];
+    color(7);
+
+
+    cout << "  |  ";
+    if(s[2] == 'X')
+    {
+        color(1);
+    }
+    else if(s[2] == '0')
+    {
+        color(4);
+    }
+    cout << s[2];
+    color(7);
+
+
+    cout << "  |  ";
+
+
+    if(s[3] == 'X')
+    {
+        color(1);
+    }
+    else if(s[3] == '0')
+    {
+        color(4);
+    }
+    cout << s[3];
+    color(7);
+    cout << '\n';
+
 
     cout << "_____|_____|_____" << '\n';
     cout << "     |     |     " << '\n';
+    cout << "  ";
 
-    cout << "  " << s[4] <<"  |  " << s[5] << "  |  " << s[6] << '\n';
+
+    if(s[4] == 'X')
+    {
+        color(1);
+    }
+    else if(s[4] == '0')
+    {
+        color(4);
+    }
+    cout << s[4];
+    color(7);
+
+
+    cout << "  |  ";
+    if(s[5] == 'X')
+    {
+        color(1);
+    }
+    else if(s[5] == '0')
+    {
+        color(4);
+    }
+    cout << s[5];
+    color(7);
+
+
+    cout << "  |  ";
+    if(s[6] == 'X')
+    {
+        color(1);
+    }
+    else if(s[6] == '0')
+    {
+        color(4);
+    }
+    cout << s[6];
+    color(7);
+    cout << '\n';
+
 
     cout << "_____|_____|_____" << '\n';
     cout << "     |     |     " << '\n';
+    cout << "  ";
 
-    cout << "  " << s[7] << "  |  "<< s[8] << "  |  " << s[9] << '\n';
 
+    if(s[7] == 'X')
+    {
+        color(1);
+    }
+    else if(s[7] == '0')
+    {
+        color(4);
+    }
+    cout << s[7];
+    color(7);
+    
+
+    cout << "  |  ";
+
+
+    if(s[8] == 'X')
+    {
+        color(1);
+    }
+    else if(s[8] == '0')
+    {
+        color(4);
+    }
+    cout << s[8];
+    color(7);
+
+
+    cout << "  |  ";
+
+
+    if(s[9] == 'X')
+    {
+        color(1);
+    }
+    else if(s[9] == '0')
+    {
+        color(4);
+    }
+    cout << s[9];
+    color(7);
+    cout << '\n';
+    
 }
 
 void color(unsigned int id)
@@ -82,6 +207,7 @@ int main()
  int player = 1;
     int i, choice;
     int mark;
+    bool draw = false;
     do
     {
         board();

@@ -209,9 +209,10 @@ int main()
     int i, choice;
     int mark;
     bool draw = false;
-     do
+    do
     {
         board();
+
         if(draw)
         {
             cout << "DRAW\n";
@@ -238,20 +239,23 @@ int main()
             {
                 draw = false;
             }
-        }
-        else
-        {
-            cout << "INVALID MOVE!!!!\n";
             
+            if(player == 1)
+            {
+                player = 2;
+            }
+            else
+            {
+                player = 1;
+            }        
         }
-        if(player == 1)
-        {
-            player = 2;
-        }
+
         else
         {
-            player = 1;
+            cout << "INVALID MOVE!!!!\n";  
         }
+        
+        
         if(i == 1)
         {
             board();
